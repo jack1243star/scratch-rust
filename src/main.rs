@@ -18,11 +18,7 @@ impl std::fmt::Display for Zundoko {
 
 impl rand::Rand for Zundoko {
     fn rand<R: rand::Rng>(rng: &mut R) -> Self {
-        if rng.gen() {
-            return Zundoko::Zun;
-        } else {
-            return Zundoko::Doko;
-        }
+        if rng.gen() {Zundoko::Zun} else {Zundoko::Doko}
     }
 }
 
