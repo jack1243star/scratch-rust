@@ -5,3 +5,4 @@ authors = ["Jack Force <jack1243star@gmail.com>"]
 
 [dependencies]
 chrono = "0.2.25"
+rand = "0.3.14"
