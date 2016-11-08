@@ -18,7 +18,11 @@ impl std::fmt::Display for Zundoko {
 
 impl rand::Rand for Zundoko {
     fn rand<R: rand::Rng>(rng: &mut R) -> Self {
-        if rng.gen() {Zundoko::Zun} else {Zundoko::Doko}
+        if rng.gen() {
+            Zundoko::Zun
+        } else {
+            Zundoko::Doko
+        }
     }
 }
 
@@ -41,21 +45,22 @@ fn main() {
             let zundoko: Zundoko = rng.gen();
             print!("{} ", zundoko);
             match zundoko {
-                Zundoko::Zun =>
-                    zuncount =
-                        if zuncount == 4 {
-                            zuncount
-                        } else {
-                            zuncount+1
-                        },
-                Zundoko::Doko =>
+                Zundoko::Zun => {
+                    zuncount = if zuncount == 4 {
+                        zuncount
+                    } else {
+                        zuncount + 1
+                    }
+                }
+                Zundoko::Doko => {
                     if zuncount == 4 {
                         break;
                     } else {
                         zuncount = 0;
                     }
+                }
             }
-            time = time+1;
+            time = time + 1;
         }
         println!("キ・ヨ・シ！ ({}回)", time);
     }
